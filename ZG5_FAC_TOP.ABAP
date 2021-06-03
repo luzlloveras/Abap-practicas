@@ -1,0 +1,27 @@
+*&---------------------------------------------------------------------*
+*& Include          ZG5_FAC_TOP
+*&---------------------------------------------------------------------*
+
+
+*&-------------------------------DECLARACION DE TABLA GLOBAL PARA CREACION DE FACT----------------------------------*
+
+
+DATA:
+wa_bdc_tab type bdcdata,
+bdc_tab    type table of bdcdata.
+
+
+*&-------------------------------ELECCION DE DOCUMENTO----------------------------------*
+PARAMETERS: P_OP3 TYPE ZG5_VBELN_VF. "N FACTURA
+PARAMETERS: P_OP10 TYPE ZG5_FKART. "TIPO FACT
+PARAMETERS: P_OP9 TYPE BSTMG. "MONTO DIVISA TOTAL
+PARAMETERS: P_OP8 TYPE WAERS. "CLAVE DIVISA
+PARAMETERS: P_OP7 TYPE fkdat. "FECHA FACT
+PARAMETERS: P_OP6 TYPE ZG5_BUKRS. "CODIGO COMPAÑIA
+PARAMETERS: P_OP2 TYPE ZG5_VBELN_VA MODIF ID MD2. "N DOCU VENTA
+PARAMETERS: P_OP5 TYPE ZG5_KUNNR MODIF ID MD2. "N CLIENTE
+PARAMETERS: P_OP1 TYPE ZG5_EBELN  MODIF ID MD1. "N DOCU COMPRA
+PARAMETERS: P_OP4 TYPE ZG5_LIFNR  MODIF ID MD1. "N CUENTA A O V
+
+PARAMETERS: P01 RADIOBUTTON GROUP RB1 USER-COMMAND UC DEFAULT 'X'.
+PARAMETERS: P02 RADIOBUTTON GROUP RB1. "TIENE QUE SER DEL MISMO GRUPO
